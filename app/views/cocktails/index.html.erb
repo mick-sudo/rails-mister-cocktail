@@ -1,9 +1,27 @@
-<h1>cocktails</h1>
 
-<ul>
+<div class="container text-center">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://petitpalaisdaglae-gordes.com/wp-content/uploads/2018/08/cocktail-au-Petit-Palais-dAgla%C3%A9.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <div class="container">
+      <h1 style="color:white;"><strong>cocktail de folie</strong></h1>
+      <p style="color:white;">un monde de cocktail</p>
+      <a class="btn btn-flat" href="#">Apply now</a>
+    </div>
+  </div>
+
+  <br>
+  <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <li><%= link_to cocktail.name, cocktail %></li>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card shadow-sm p-3 mb-3 bg-white rounded border-0">
+          <div class="card-description">
+            <h5 class="p-3"><%= link_to cocktail.name, cocktail_path(cocktail), class: "card-link" %></h5>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
+    <div class="flex">
+    <span class="btn"><%= link_to "add cocktail", new_cocktail_path %></span>
+  </div>
 
-  <%= link_to "add cocktail", new_cocktail_path %>
+</div>
